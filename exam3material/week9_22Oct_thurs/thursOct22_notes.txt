@@ -171,12 +171,7 @@ We have that:
     1 + 2 + ... + k + (k+1) = k(k+1)/2 + (k+1) (by inductive hypothesis)
                             = (k(k+1) + 2(k+1))/2
                             = (k+1)(k+2)/2
-                            = (k+1)((k+1)+1)/2
-
-Thus the claim holds for k+1.
-
-We have proved the base case and the inductive step, so our
-claim holds by induction for all positive integers n.
+                            = (k+1)((k+1)+1)/
 
 
 /////////////////////////////////

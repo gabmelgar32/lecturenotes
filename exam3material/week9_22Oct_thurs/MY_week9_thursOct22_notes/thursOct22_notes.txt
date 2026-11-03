@@ -11,13 +11,20 @@ Today:
 Soundness and completeness of predicate logic.
 
 
-Soundness: definition?
+Soundness: definition? - everything we could prove with deduction was actually true/valid
 
-    propositional logic?
+    propositional logic? - yes
 
-    predicate logic?
+    predicate logic? - no
 
+If we wanted to prove a premise it would look like
 
+    Prmise: All x P(X)
+    Conclusion Exists x P(x)
+
+    this is true in almost all domains except in an empty domain
+
+    predicate logic is not the same as natural deduction/move on from natural deduction
 
 
 Completeness: definition?
@@ -42,7 +49,9 @@ Domain with integers with operations like +
 All integers? 2 + 3 = ?
 
 
-Subset (0,1,2,3,4) of integers. 2 + 3 = ?
+Subset (0,1,2,3,4) of integers. 2 + 3 = 0... ie wrap around
+
+anything depending on artihmetic, depending on the domain i am using then i will yield different answers
 
 
 
@@ -55,6 +64,10 @@ Any consistent formal system where integer arithmetic is
 carried out is incomplete -- there will be true statements
 that cannot be proved.
 
+
+predicate logic must be sound otherwise we are proving nonsense
+predcate logic is not complete though like natural deduction, because their could be infinite domains
+
 (depends on interpretations)
 
 /////////////////////
@@ -63,7 +76,13 @@ Example:
 
 We want to prove that for any positive integer n:
 
-    1 + 2 + ... + n = n*(n+1)/2
+    1 + 2 + ... + n = n*(n+1)/2 
+
+    plug in numbers for n
+    check what leftside would be and what rightside will be
+
+    carl gauss derived this formula whenhe was bothering a teaecher and the teaecher gave him harder artihmethic problems to then keep him distracted but he was getting the answer right away
+    because he had derived this formula
 
 
 (Carl Gauss)
@@ -79,7 +98,7 @@ Try it out first.
 
 Have we proved it yet?
 
-
+NO, we have only proved it for those 3 numbers
 
 ///////////////////////////////////////////
 
@@ -93,28 +112,40 @@ The induction domino effect:
 
     ( P(1) ∧ ∀ k (P(k) → P(k+1)) ) → ∀ n P(n) 
 
+    this is describing the domino effect shown on the whiteboard in class todya
+    
+
 
 
 
 What is this saying?
-    P(1)? 
+    P(1)? if this claim is true for n = 1
 
-    ∀ k (P(k) → P(k+1))? 
+    ∀ k (P(k) → P(k+1))? for all k if its true for P(k) then its true for P(k + 1)
 
 
 
-Putting it all together:
+Putting it all together: 
 
 
 
 English translation?
 
+(this is called the base case)
+How will we prove P(1)? - choose first element in domain, show that claim holds for it
+    
 
-How will we prove P(1)?
-
-
+(called inductive step)
 How will we prove ∀ k (P(k) → P(k+1))? 
     (How would we prove this for-all statements in predicate logic?)
+        
+    
+
+Previously we have done,
+AllI- pick a random indivdual, k, in my domain.
+    ImplyI- assume the left which in this case would (P(K)) <-- this is called inductive hypothesis
+        then try to get P(K + 1)
+
 
 
 
@@ -131,9 +162,26 @@ We want to prove that for any positive integer n:
     1 + 2 + ... + n = n*(n+1)/2
 
 
+HOW TO USE THIS STRUCTURE
 
+The above claim is P(n)
 
 Proof by induction.
+
+Base case - We must prove the claim holds for the first positive integer n,
+n = 1. We have that the left side of the claim is 1, and the right side of the claim is 1(1+1)/2 = 1. The two sides are equal, so the base case holds
+
+    Inductive Step- We assume the inductive hypothesis - 
+        that 1 + 2 + ... + k = k(k+1)/2 
+    for some fixed positive integer k. We must show that our claim holds for k+1, that is we must show that: 
+        1 + 2 + ... + k + (K+1) = (K+1)((K+1)+1)/2
+    
+    We have that:
+    1 + 2 + ... + k + (K +1) = K(K+1)/2 + (k+1) (by inductive hypothesis)
+
+
+In the lab quiz - the first answer is 1^2 = the whole right side with 1 plugged in because we arent assuming anything yet
+we plug in 1 becasue it is the lowest real number we have
 
 
 
@@ -182,11 +230,28 @@ Proof by induction.
 Example: Prove that 3^n - 1 is even for all positive integers n.
 
 
-what does "even" mean? 
+what does "even" mean?  divisible by 2
+    {x: x = 2k, k in z, K >=1 }
 
+domain: natural numbers
 
 
 Proof by induction.
+Base case - we must prove that that our claim holds for the smallest positive integer, n = 1. We have that 3^1 - 1 = 2
+ since 2 = 2*1 where 1 is an integer, we have that 2 is even. The base case holds
+
+ Inductive Step: we assume the inductive hypothesis-- that 3^k - 1 is even for some fixed positive integer k. 
+    we must prove that 3^(k+1) - 1 is also even
+    Since 3^(k+1) - 1 is even, we have 3^k - 1 = 2a where a is an integer.
+    We have that:
+    3^(k+1) - 1. = 3*3^k - 1
+                 = 3*(3^k - 1) - 1 + 3
+                 = 3*(3^k - 1) + 2
+                 = 3*2a + 2
+                 = 6a + 2
+                 = 2(3a + 1)
+
+and so 3^(k+1) - 1 = 2(3a+1), where 3a + 1 is an integer thus 3^(k+1) - 1 is even
 
 
 

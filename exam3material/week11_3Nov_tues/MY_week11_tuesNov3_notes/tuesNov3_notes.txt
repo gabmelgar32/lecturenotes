@@ -17,8 +17,9 @@ Rational definition?
 
 How to start the proof? 
 
-
-
+Let r be a rational number and let i be an irrational nunmber, assume for the sake of contradiction, that i + r is rtional.
+Since r is rationalm r = p/q where p,q are integers and q != 0 
+Since i + r is rational 
 
 
 
@@ -36,20 +37,25 @@ Today:
 
 Proofs with sets.
 
-Prove that A ⊆ B?
+Prove that A ⊆ B? -- This means A is a subset of B. Meaning everything in A is in B
     --> how would we express this in predicate logic?
 
-
+    ∀ x (x ∈ A __>: x ∈ B ) //implies introduction, assume lefthand side
 
     --> proof template? 
+    pick a random indivual, maybe x
+    assume x is in a
+    ...
+    prove x is in B
 
+    prove something about x
 
 
 
 
 
 Prove that A = B?
-
+prove A ⊆ B
 
 ///////////////////////////////
 
@@ -60,14 +66,17 @@ Prove that {x : x = 4k + 2, k ∈ ℤ} ⊆ {x : x = 2a, a ∈ ℤ}
 A = {x : x = 4k + 2, k ∈ ℤ} 
 B = {x : x = 2a, a ∈ ℤ} 
 
-A: what elements?  
+A: what elements? every other even number
+    (just the evens between the multiples of 4) 
 
 
-B: what elements? 
-
+B: what elements? even numbers
 
 Proof that A ⊆ B.
 
+Let x ∈ A. Then x = 4k + 2 where k ∈ ℤ
+
+...want x = 2(some integer), would mean is in B
 
 
 
@@ -78,6 +87,14 @@ What if we wanted to prove something like:
 
 A ⋂ B = C?
 
+Part 1. Show A ⋂ B ⊆ C.
+    Let X ∈ A ⋂ B. Then X ∈ A and X ∈ B. Write out x using A's set builder notation and again using B's
+    set builder notation. ReWrite x to match C's set builder notation. 
+
+Part 2. Show that C ⊆ A ⋂ B
+    Let x ∈ C. Write x using C's set builder notation.
+    Goal: wrote x matching A's set builder notation AND again matching B's set builder notation
+
 ///////////////////////////////
 
 Goal of programming logic.
@@ -86,8 +103,6 @@ Apply proof techniques and similar reasoning to prove correctness
 of basic programs.
 
 (Why does this matter?)
-
-
 
 
 AWS formal methods
@@ -156,10 +171,12 @@ Then: prove program correctness in "auto" mode
 
 ////////////////////////
 
-Preconditions: ?
+Preconditions: ? are assumptions that the program or function
+    needs in order to fulfill its requirements
 
 
-Postconditions: ?
+Postconditions: ? what we are trying to show a function or program
+    
 
 
 /////
@@ -197,7 +214,7 @@ How are Logika asserts different from C# (and other languages)?
 
 Process of validating a program:
 
-
+getting whatever user inputs
 
 (any assumptions needed about user input - assume)
 
@@ -245,7 +262,10 @@ assume(num > 0)
 var y: Z = 12
 
 //proof block? what would go there?
-
+Deduce(
+    1 ( y == 12) by Premise,
+    2( num > 0 ) by Premise,
+)
 
 
 
@@ -257,8 +277,8 @@ Algebra* (or Algebra T)
 
     Deduce(
         1 ( x == 2 ) by Premise,
-        2 ( x >= 2 ) by ???,
-        3 ( 4 > 0 ) by ???
+        2 ( x >= 2 ) by Algebra*(1), // order of the parameters are not revelant
+        3 ( 4 > 0 ) by Algebra T(2),
     )
 
 

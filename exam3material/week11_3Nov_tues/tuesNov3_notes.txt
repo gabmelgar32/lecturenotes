@@ -21,7 +21,6 @@ How to start the proof?
 
 
 
-
 HW 9 will be posted after class
 
 ///////////////////////////////
@@ -60,15 +59,13 @@ Prove that {x : x = 4k + 2, k ∈ ℤ} ⊆ {x : x = 2a, a ∈ ℤ}
 A = {x : x = 4k + 2, k ∈ ℤ} 
 B = {x : x = 2a, a ∈ ℤ} 
 
-A: what elements?  
+A: what elements?
 
 
 B: what elements? 
 
 
 Proof that A ⊆ B.
-
-
 
 
 
