@@ -7,23 +7,35 @@ irrational number is irrational.
 
 How to write as an IF/THEN?
 
-
+If we have a rational number r and an irrational number i, then
+    r+i is irrational.
 
 
 Rational definition?
 
+a number x is rational if x = p/q where p,q are integers and q!=0.
 
 
 
 How to start the proof? 
+    Let r be a rational number and let i be an irrational number.
+    Assume, for the sake of contradiction, that i+r is rational.
 
+    Since r is rational, r = p/q where p,q are integers and q != 0.
+    Since i+r is rational, i+r = a/b where a,b are integers and b != 0.
 
+    i = (i+r) - r 
+      = a/b - p/q
 
-
+    (want a contradiction)
 
 HW 9 will be posted after class
 
-///////////////////////////////
+////////////////////////////////
+
+∀ ∃     ∈ ∉     ∅ ⋂ ⋃ ⊂ ⊆   ⋀ ⋁ ¬ →     ℕ ℤ     ≠ ≤ ≥
+
+/////////////////////////////////
 
 Today:
 
@@ -38,9 +50,18 @@ Proofs with sets.
 Prove that A ⊆ B?
     --> how would we express this in predicate logic?
 
+everything in A is also in B 
+
+    ∀ x (x ∈ A → x ∈ B)
 
 
     --> proof template? 
+    pick a random individual, maybe x
+        assume x is in A 
+        ...
+        prove x is in B 
+
+    prove something about x
 
 
 
@@ -48,6 +69,8 @@ Prove that A ⊆ B?
 
 
 Prove that A = B?
+    prove A ⊆ B
+    prove B ⊆ A
 
 
 ///////////////////////////////
@@ -59,13 +82,26 @@ Prove that {x : x = 4k + 2, k ∈ ℤ} ⊆ {x : x = 2a, a ∈ ℤ}
 A = {x : x = 4k + 2, k ∈ ℤ} 
 B = {x : x = 2a, a ∈ ℤ} 
 
+<<<<<<< HEAD
 A: what elements?
+=======
+A: what elements?  every other even number
+    (just the evens between the multiples of 4)
+>>>>>>> 97789fcb3583002c0c28ec6774c2a7a8cf44d8e3
 
 
-B: what elements? 
+B: what elements? even numbers 
 
 
 Proof that A ⊆ B.
+
+Let x ∈ A. Then x = 4k + 2 where k ∈ ℤ.
+We have that:
+    x = 4k + 2
+      = 2(2k + 1)
+
+Thus x = 2a, where a is the integer 2k+1, and so x is in B.
+
 
 
 
@@ -74,6 +110,22 @@ Proof that A ⊆ B.
 What if we wanted to prove something like:
 
 A ⋂ B = C?
+
+Part 1. Show A ⋂ B ⊆ C.
+    Let x ∈ A ⋂ B. Then x ∈ A and x ∈ B. Write out x using A's 
+    set builder notation and again using B's set builder notation.
+    Rewrite x to match C's set builder notation.
+
+
+
+Part 2. Show that C ⊆ A ⋂ B
+    Let x ∈ C. Write x using C's set builder notation.
+    Goal: write x matching A's set builder notation AND again
+    matching B's set builder notation. 
+
+
+
+A ⋃ B = C
 
 ///////////////////////////////
 
@@ -153,10 +205,12 @@ Then: prove program correctness in "auto" mode
 
 ////////////////////////
 
-Preconditions: ?
+Preconditions: ? are assumptions that the program or function
+    needs in order to fulfill its requirements
 
 
-Postconditions: ?
+Postconditions: ? what we are trying to show a function or program
+    does 
 
 
 /////
@@ -195,6 +249,7 @@ How are Logika asserts different from C# (and other languages)?
 Process of validating a program:
 
 
+getting whatever user inputs 
 
 (any assumptions needed about user input - assume)
 
@@ -242,6 +297,10 @@ assume(num > 0)
 var y: Z = 12
 
 //proof block? what would go there?
+Deduce (
+    1 ( y == 12 ) by Premise,
+    2 ( num > 0 ) by Premise
+)
 
 
 
@@ -254,8 +313,8 @@ Algebra* (or Algebra T)
 
     Deduce(
         1 ( x == 2 ) by Premise,
-        2 ( x >= 2 ) by ???,
-        3 ( 4 > 0 ) by ???
+        2 ( x >= 2 ) by Algebra*(1),
+        3 ( 4 > 0 ) by Algebra T
     )
 
 
@@ -263,7 +322,7 @@ Algebra* (or Algebra T)
 ////
 
 ANY of your propositional/predicate logic justifications
-    (especially AndE1, AndE2, AndI, OrI1, OrI2)
+    (especially AndE1, AndE2, AndI, OrI1, OrI2, OrE)
 
 
 
@@ -293,6 +352,10 @@ assume that x > y
 set a max variable to x
 
 want to assert that max is the biggest of our two inputs
+
+///////////////////////////////
+
+<-- stopped here, will continue Thursday
 
 ///////////////////////////////
 
