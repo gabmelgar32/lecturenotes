@@ -1,0 +1,28 @@
+//Homework 8
+//5_proofContradiction.txt
+
+
+Use proof by contradiction to prove the following proposition:
+
+The sum of an irrational and a rational number is irrational.
+
+
+///
+
+Proof. Suppose for the sake of contradiction that there exists an irrational number r and
+a rational number x such that r + x is rational.
+
+Since x is rational, there exist integers p and q (where q ≠ 0) such that x = p/q.
+
+Since r + x is rational, there exist integers a and b (where b ≠ 0) such that r + x = a/b.
+
+We have that:
+    r = r + x - x
+      = (a/b) - (p/q)
+      = (aq - bp)/bq
+
+Since b ≠ 0 and q ≠ 0, it follows that bq ≠ 0. Thus r = c/d for integers c and d, where
+c = (aq - bp) and d = bq (where d ≠ 0). It follows from the definition of a rational number that r is rational.
+
+But we assumed r was irrational, so we have the contradiction that r is both irrational and rational.
+Thus r + x must be irrational.

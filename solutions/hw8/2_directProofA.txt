@@ -1,0 +1,21 @@
+//Homework 8
+//2_directProofA.txt
+
+
+Use a direct proof to prove the following proposition:
+
+The product of two odd integers is odd.
+
+///
+
+Proof. Let x and y be odd integers.
+Since x is an odd integer, there exists an integer k such that x = 2k + 1.
+Since y is an odd integer, there exists an integer m such that y = 2m + 1.
+
+We have that:
+    xy = (2k + 1)(2m + 1)
+        = 4km + 2k + 2m + 1
+        = 2(2km + k + m) + 1
+
+Thus xy = 2b + 1, where b is the integer 2km + k + m. We have that xy is odd,
+by definition of an odd number.

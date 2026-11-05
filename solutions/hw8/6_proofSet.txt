@@ -1,0 +1,17 @@
+//Homework 8
+//6_proofSet.txt
+
+Prove that {x : x = 4k + 5, k ∈ Z} = {x : x = 4k + 1, k ∈ Z}
+
+
+///
+
+Proof. Let A = {x : x = 4k + 5, k ∈ Z} and B = {x : x = 4k + 1, k ∈ Z}.
+
+We first prove that A ⊆ B. Let x ∈ A. Then there exists an integer m such that  x = 4m + 5.
+We have that x = 4m + 5 = 4(m+1) + 1. Because m+1 is also an integer, it follows that x ∈ B. Thus A ⊆ B.
+
+We next prove that B ⊆ A. Let x ∈ B. Then there exists an integer n such that x = 4n + 1.
+We have that x = 4n + 1 = 4(n-1) + 5. Because n-1 is also an integer, it follows that x ∈ A. Thus B ⊆ A.
+
+Since A ⊆ B and B ⊆ A, we have that A = B.

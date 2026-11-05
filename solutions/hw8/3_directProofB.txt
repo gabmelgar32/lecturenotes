@@ -1,0 +1,23 @@
+//Homework 8
+//3_directProofB.txt
+
+
+Use a direct proof to prove the following proposition:
+
+If x and y are even integers and z is an odd integer, then xyz is even.
+
+///
+
+Proof. 
+
+Let x and y be even integers and let z be an odd integer. Then x = 2k, y = 2m,
+and z = 2n+1 for some integers k, m, n. We have that:
+
+    xyz = (2k)(2m)(2n+1)
+        = 4km(2n+1)
+        = 8kmn + 4km
+        = 2(4kmn + 2kmn)
+
+Thus xyz = 2a, where a is the integer 4kmn + 2kmn. It follows that xyz is even.
+
+(Note: it is OK to rewrite xyz in the form 2(2km(2n+1)) instead.)
