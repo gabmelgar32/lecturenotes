@@ -1,0 +1,152 @@
+HW 9 due tonight
+
+ 
+HW 10 will be posted after class, due next Tues
+
+Exam 3 is Thursday, November 19
+    (more information will be posted this week)
+
+//////////////////////
+
+Today:
+- finish absolute value verification
+- verification with nested conditionals
+- verifying programs with functions
+
+//////////////////////////////////
+
+(abs.sc)
+
+Example: absolute value
+
+////////////////////////////////
+
+Verify programs with nested conditionals.
+
+Max of 3 numbers
+
+-- see code
+
+-- in each branch, what do we know about max?
+
+-- finish verification
+
+//////////////////////////////////
+
+Function contracts - just under function definition:
+
+Contract(
+    Requires(
+        precondition,
+        precondition,
+    ),
+    Ensures(
+        postcondition,
+        postcondition
+    )
+)
+
+
+Requires/preconditions: assumptions we need to make 
+
+
+
+///
+
+Ensures/postconditions: results the function should have
+    explain value being returned
+    Res[Z] - returned value
+
+
+
+/////////////////////////////////
+
+Example: tickets.sc
+- find the total cost of tickets based on adult/child numbers
+- each adult ticket is $50, and each child ticket is $30
+
+- what do we need as preconditions?
+
+- what do we want as the postcondition?
+
+--> finish verification
+
+
+//////////////////////////////////
+
+(in-class quiz)
+
+//////////////////////////////////
+
+Four steps:
+
+1) What should be done before calling the function?
+
+prove all its preconditions about what WE are passing as the parameter
+
+
+2) What can the function itself do with the preconditions?
+
+list all preconditions as premises
+
+
+3) What must the function do with the postconditions?
+
+prove each postcondition about the value being returned
+
+
+4) What can the calling code do with the postcondition after
+    the function returns? 
+
+list each postcondition as a premise using the values passed as parameters
+    and the place the return value is being saved
+
+
+
+
+/////////////////////////////////
+
+Example: put our abs code in a function (absFn.sc)
+
+
+/////////////////////////////////
+
+<-- stopped here, will continue Thursday
+
+/////////////////////////////////
+
+Recursive functions
+
+- exactly the same idea
+
+if (base case condition) {
+    answer = base case
+} else {
+
+    //what to do here?
+
+    recursive call
+
+    //what can we do here?
+
+    answer = recursive call case
+}
+
+//if we want some postcondition after an if/else, what do we do?
+
+return answer
+
+
+
+/////////////////////////////////
+
+Example (mult_rec.sc):
+
+- multiplication through repeated (recursive) addition
+- write function contract
+- do verification
+
+/////////////////////////////
+
+Next time:
+- verifying functions with loops
