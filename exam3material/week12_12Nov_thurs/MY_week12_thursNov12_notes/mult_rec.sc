@@ -11,40 +11,27 @@ def mult(x: Z, y: Z): Z = {
   //what goes here?
   //what should we require?
   //what should we ensure?
-  Contract(
-    Requires(y >= 0), //because our condition is y ==0, we want our else to be greater than 0 otherwise it will get infinitely smaller
-    Ensures(Res[Z] == x * y)
-  )
 
   var answer: Z = 0
 
   if (y == 0) {
     answer = 0
 
-    Deduce(
-      1(y == 0) by Premise, //if ocndition is true
-      2(answer == 0) by Premise, //from assignment
-      3(y > 0) by Premise, //from pre conditon but not needed s
-      4(answer == x * y ) by Algebra*(1,2) // proves postcondition 
-    )
-
     //what do we need to do here?
-    //we need answer == x*y here as well
   } else {
 
-    //need to prove precondition(requires) before recursive call
-    Deduce(
-      //need to prove: y - 1 >= 0
-      1(y >= 0) by Premise, //precondition
-      2(!(y == 0)) by Premise,
-      3(y-1 >= 0) by Algebra*(1,2) //this proves precondition
-
-    )
-
-    //this tells me x*(y-1)
-    //will be x + x + x a total of y-1 times
     var temp: Z = mult(x, y-1)
     answer = x + temp
+
+    Deduce(
+      1 ( answer == x + temp ) by Premise, //from assignment
+      2 ( !(y == 0) ) by Premise, //if condition is false (not needed here)
+      3 ( temp == x*(y-1)  ) by Premise, //from postcondition after recursive call
+
+      4 ( temp == x*y - x ) by Algebra*(3),
+      5 ( answer == x + x*y - x ) by Algebra*(1,4),
+      6 ( answer == x*y ) by Algebra*(5) //proves postcondition for else
+    )
 
     Deduce(
       1(answer == x + temp) by Premise, //from assignment
@@ -56,16 +43,13 @@ def mult(x: Z, y: Z): Z = {
       6(answer == x*y) by Algebra*(5) //proves post conditon for else
     )
     //what do we need to show here?
-    //we need answer == x*y here 
   }
 
-  //what do we need to do here?
-  //we need to prove our post condition
-  //this is the post condition: Ensures(Res[Z] == x * y) 
-
   Deduce(
-    1(answer == x * y) by Premise
+    1 ( answer == x*y ) by Premise
   )
+
+  //what do we need to do here?
 
   return answer
 }
@@ -75,26 +59,16 @@ def mult(x: Z, y: Z): Z = {
 val a: Z = 5
 val b: Z = 4
 
-//prove the preconditon before the call
-Deduce(
-  1(b == 4) by Premise,
-  2(b >= 0) by Algebra*(1)//proves preconditon
-
-  //need to prove b >=0 
-)
-
 var ans: Z = mult(a, b)
 
+//prove the assert
 Deduce(
-  1(a == 5) by Premise, //from assignment
-  2(b == 4) by Premise, //from assignment
-  3(ans == a*b) by Premise, //from postcondition
-  4(ans == 20) by Algebra*(1,2,3) //proves the assert
-  
-  //need answer == 20
+  1 ( a == 5 ) by Premise, //from assignment
+  2 ( b == 4 ) by Premise, //from assignment
+  3 ( ans == a*b ) by Premise, //from postcondition
+  4 ( ans == 20 ) by Algebra*(1,2,3) //proves assert
+
+  //need: ans == 20
 )
 
-//what do we want to assert that ans is? -- we should be wanting to assert 20
-assert(ans == 20)
-
-//we want to prove our pre condition in each branch 
+//what do we want to assert that ans is?

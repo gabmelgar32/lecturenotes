@@ -1,0 +1,113 @@
+HW 10 due tonight
+    (no new homework this week)
+
+Exam 3 is Thursday, November 19
+
+Drake and Rachel have an Exam 3 review session Wednesday, November 18 from 1:00-3:20 pm in DUE 1118
+
+//////////////////////////////
+
+Today:
+- finish loop multiplication example
+- more with loop invariants
+- review for exam 3
+
+//////////////////////////////
+
+Reminder: loop invariant(s)
+
+//what do we need here?
+
+while (condition) {
+    Invariant(
+        Modifies(list all variables modified in loop),
+        invariant1,
+        invariant2,
+        ...
+    )
+
+    //what can we to do here?
+
+    //what do we need to do here?
+}
+
+//how to prove the postcondition?
+
+////////////////////////
+
+more with mult_loop.sc
+
+--> what if the loop condition was "i < y" instead?
+
+//////////////////////////////
+
+Loop invariants.
+
+- Summarize loop progress
+- Often describe the relationship between the variables that change
+- Used with the negation of loop condition to prove postconditions
+
+//////////////////
+
+Example: sum_evens.sc
+
+--> what do we want as our function contract?
+--> make table of relationship between loop variables
+--> write loop invariant 
+--> do verification
+
+///////////////////
+
+in-class quiz
+
+///////////////////
+
+Exam 3 review.
+
+--> Covers everything since Exam 2 (including today)
+--> Closed notes, closed computers
+
+Topics:
+- Predicate logic proofs emphasizing the existential quantifier
+- Recursive definitions (functions and sets)
+- Proof techniques, including:
+    - Mathematical induction
+    - Direct (conditional) proofs
+    - Contrapositive proofs 
+    - Proof by contradiction
+    - Proofs on sets
+    --> know the formal definition of even/odd numbers
+- Programming logic, including:
+    - assumes and asserts
+    - Subst and Algebra
+    - Verifying programs with:
+        - Variable assignments/expressions/updates
+        - If/else statements
+        - Functions (plus recursive functions and calling functions)
+        - Loops
+    - Function contracts (meaning of preconditions/postconditions)
+    - Loop invariants
+
+
+
+Problems will be similar in format to Homework 7-10.
+
+
+When doing programming logic:
+    - what to do with each variable update?
+        --> what is the goal here?
+    
+    - what do we do with asserts?
+
+    - what do we do with conditional statements?
+
+    - what do we do with the preconditions?
+
+    - what do we do with the postconditions?
+
+    - what do we do with loop invariants?
+
+
+
+
+Now, we will work through practice exam 3

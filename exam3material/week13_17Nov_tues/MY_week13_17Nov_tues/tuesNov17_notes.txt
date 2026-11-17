@@ -1,0 +1,128 @@
+HW 10 due tonight
+    (no new homework this week)
+
+Exam 3 is Thursday, November 19
+
+Drake and Rachel have an Exam 3 review session Wednesday, November 18 from 1:00-3:20 pm in DUE 1118
+
+//////////////////////////////
+
+Today:
+- finish loop multiplication example
+- more with loop invariants
+- review for exam 3
+
+//////////////////////////////
+
+Reminder: loop invariant(s)
+
+//what do we need here?
+
+while (condition) {
+    Invariant(
+        Modifies(list all variables modified in loop),
+        invariant1,
+        invariant2,
+        ...
+    )
+
+    //what can we to do here?
+
+    //what do we need to do here?
+}
+
+//how to prove the postcondition?
+
+////////////////////////
+
+more with mult_loop.sc
+
+--> what if the loop condition was "i < y" instead?
+
+//////////////////////////////
+
+Loop invariants.
+
+- Summarize loop progress
+- Often describe the relationship between the variables that change
+- Used with the negation of loop condition to prove postconditions
+
+//////////////////
+
+Example: sum_evens.sc
+
+--> what do we want as our function contract?
+--> make table of relationship between loop variables
+--> write loop invariant 
+--> do verification
+
+///////////////////
+
+in-class quiz
+
+///////////////////
+
+Exam 3 review.
+
+--> Covers everything since Exam 2 (including today)
+--> Closed notes, closed computers
+
+Topics:
+- Predicate logic proofs emphasizing the existential quantifier(existsE)
+- Recursive definitions (functions and sets)
+- Proof techniques, including:
+    - Mathematical induction
+    - Direct (conditional) proofs
+    - Contrapositive proofs 
+    - Proof by contradiction
+    - Proofs on sets
+    --> know the formal definition of even/odd numbers //( a number is even if it equals 2k, odd if 2k + 1)
+- Programming logic, including:
+    - assumes and asserts 
+    (if there is an assume statement you can use it as a premise, an assumption we need to make) 
+    (if there is an assert we need to prove that statemnet exactly before that statement)
+
+    - Subst and Algebra(might be a multiple choice for substiution)
+
+        m(claim that im rewriting)
+        n(LHS == RHS)
+
+        Subst_<(n,m) if rewriting the claim by replacing all lhs with RHS
+        Subst_>(n,m) if rewriting the claim replacing all the rhs with LHS
+
+        (5 >0 ) by Algebra T or just Algebra
+    - Verifying programs with:
+        - Variable assignments/expressions/updates
+        - If/else statements
+        ( want to claim something is true after the if - else, then we need to prove it in both branches. )
+        ( look at homework 7 - 9 for examples)
+        (just need claim 1 from if and claim2 from else)
+
+        - Functions (plus recursive functions and calling functions)
+        - Loops (read loop invariants to know what you need to do in terms of proving them)
+    - Function contracts (meaning of preconditions/postconditions)
+    - Loop invariants 
+
+
+
+Problems will be similar in format to Homework 7-10.
+
+
+When doing programming logic:
+    - what to do with each variable update?
+        --> what is the goal here?
+    
+    - what do we do with asserts?
+
+    - what do we do with conditional statements?
+
+    - what do we do with the preconditions?
+
+    - what do we do with the postconditions?
+
+    - what do we do with loop invariants?
+
+
+
+
+Now, we will work through practice exam 3
